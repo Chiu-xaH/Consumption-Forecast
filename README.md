@@ -10,11 +10,11 @@
 
 ## API文档
 
-POST /forecast/api/day
+**POST /forecast/api/day**
 
-POST /forecast/api/month
+**POST /forecast/api/month**
 
-POST /forecast/api/
+**POST /forecast/api/**
 
 都提交JSON即可，JSON格式如下：
 ```JSON
