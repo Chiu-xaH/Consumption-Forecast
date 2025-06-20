@@ -7,3 +7,50 @@
 
 ## 实际应用
 [后续版本上线到此APP](https://github.com/Chiu-xaH/HFUT-Schedule)
+
+## API文档
+
+POST /forecast/api/day
+
+POST /forecast/api/month
+
+POST /forecast/api/
+
+都提交JSON即可，JSON格式如下：
+```JSON
+[
+  {
+    "date" : "2025-06-20 12:00:00",
+    "amount" : "11.00",
+    "merchant" : "某某餐厅"
+  }
+]
+```
+返回JSON格式如下：
+```JSON
+{
+  "data" : {
+    "day" : {
+      "predicted_data" : 26.77,
+      "statistical_data" : [
+        {
+          "date" : "2025-06-20 12:00:00",
+          "amount" : "11.00",
+          "merchant" : "某某餐厅"
+        }
+      ]
+    },
+    "month" : {
+      "predicted_data" : 26.77,
+      "statistical_data" : [
+        {
+          "date" : "2025-06",
+          "amount" : "700.80"
+        }
+      ]
+    }
+  },
+  "msg" : "success",
+  "state" : 200
+}
+```
