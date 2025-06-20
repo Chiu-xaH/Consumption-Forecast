@@ -31,7 +31,7 @@ def api_day_forecast():
         predicted_data = forcast_tomorrow_amount(washed_data)
         return jsonify(ResultEntity.success(data=predicted_data))
     except Exception as e:
-        return jsonify(ResultEntity.fail(StatusCode.BAD_REQUEST, f"数据解析失败: {str(e)}"))
+        return jsonify(ResultEntity.fail(StatusCode.BAD_REQUEST, f"失败: {str(e)}"))
 
 
 # 接收JSON列表。返回一个double
@@ -44,7 +44,7 @@ def api_month_forecast():
         predicted_data = forcast_next_month_amount(washed_data)
         return jsonify(ResultEntity.success(data=predicted_data))
     except Exception as e:
-        return jsonify(ResultEntity.fail(StatusCode.BAD_REQUEST, f"数据解析失败: {str(e)}"))
+        return jsonify(ResultEntity.fail(StatusCode.BAD_REQUEST, f"失败: {str(e)}"))
 
 
 # 聚合
@@ -68,7 +68,7 @@ def api_all_forecast():
             }
         }))
     except Exception as e:
-        return jsonify(ResultEntity.fail(StatusCode.BAD_REQUEST, f"数据解析失败: {str(e)}"))
+        return jsonify(ResultEntity.fail(StatusCode.BAD_REQUEST, f"失败: {str(e)}"))
 
 
 if __name__ == "__main__":
