@@ -10,6 +10,8 @@
 
 ## API文档
 
+**HOST** https://consumption-forecast.vercel.app
+
 **POST /forecast/api/day**
 
 **POST /forecast/api/month**
