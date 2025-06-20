@@ -4,11 +4,12 @@ from flask import request, jsonify, Response, Blueprint
 import sys
 import os
 
+from api.result import ResultEntity, StatusCode
 from logic.day import forcast_tomorrow_amount
 from logic.month import forcast_next_month_amount
 from logic.parse import parse_request
 from logic.wash import wash_data_to_day, wash_data_to_month
-from result import ResultEntity, StatusCode
+
 
 # 将根目录添加到模块搜索路径
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
