@@ -5,7 +5,8 @@ import calendar
 
 
 # date为"YYYY-MM-DD HH:MM:SS"
-# 总数据洗刷为每月消费（根据date）如果不满一个月，则舍弃，最后返回类似列表[dict(month="2024-12",amount)]
+
+# 总数据洗刷为每月消费（根据date）如果不满一个月，则舍弃，最后返回类似列表[dict(date="2024-12",amount)]
 # 改进 一个月消费天数大于15天则算有效月，否则有误差
 # 为什么选15，为了舍弃寒暑假
 def wash_data_to_month(list_data):
