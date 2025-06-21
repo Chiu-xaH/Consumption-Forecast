@@ -1,3 +1,5 @@
+import traceback
+
 import flask
 from flask import request, jsonify, Response, Blueprint
 
@@ -70,7 +72,7 @@ def api_all_forecast():
             }
         }))
     except Exception as e:
-        return jsonify(ResultEntity.fail(StatusCode.BAD_REQUEST, f"失败: {str(e)}"))
+        return jsonify(ResultEntity.fail(StatusCode.BAD_REQUEST, f"失败: {str(e)}\n{traceback.format_exc()}"))
 
 
 if __name__ == "__main__":

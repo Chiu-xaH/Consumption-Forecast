@@ -22,10 +22,10 @@ def wash_data_to_month(list_data):
     result = []
     for month, day_amount_list in month_data.items():
         days = {d for d, _ in day_amount_list}  # 用 set 去重
-        if len(days) >= 15:  # ✅ 新规则
+        if len(days) >= 15:  # 有效月规则
             total = sum(amount for _, amount in day_amount_list)
             result.append({
-                "month": month,
+                "date": month,
                 "amount": round(total, 2)
             })
 
