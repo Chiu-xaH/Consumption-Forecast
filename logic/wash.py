@@ -9,7 +9,7 @@ import calendar
 # 总数据洗刷为每月消费（根据date）如果不满一个月，则舍弃，最后返回类似列表[dict(date="2024-12",amount)]
 # 改进 一个月消费天数大于15天则算有效月，否则有误差
 # 为什么选15，为了舍弃寒暑假
-def wash_data_to_month(list_data):
+def wash_data_to_month(list_data, filter_days=0):
     # 1. 将数据按年月分组
     month_data = defaultdict(list)
 
@@ -23,7 +23,7 @@ def wash_data_to_month(list_data):
     result = []
     for month, day_amount_list in month_data.items():
         days = {d for d, _ in day_amount_list}  # 用 set 去重
-        if len(days) >= 15:  # 有效月规则
+        if len(days) >= filter_days:  # 有效月规则
             total = sum(amount for _, amount in day_amount_list)
             result.append({
                 "date": month,

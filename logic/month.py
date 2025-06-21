@@ -42,9 +42,21 @@ def forcast_next_month_amount(washed_data):
         months.append(dt)
         amounts.append(item["amount"])
 
+    # 数据不足无法预测
+    if len(months) < 2:
+        return round(float(amounts[0]) if amounts else 0.0, 2)
+
     # 2. 转换成从起始月开始的编号
     base = min(months)
     month_nums = [(m.year - base.year) * 12 + (m.month - base.month) for m in months]
+
+    avg = average_amount(washed_data)
+    diffs = [abs(a - avg) for a in amounts]
+    max_diff_index = diffs.index(max(diffs))
+
+    if len(amounts) > 2:  # 避免剔除后不足以预测
+        del amounts[max_diff_index]
+        del month_nums[max_diff_index]
 
     # 3. 用 numpy 实现线性拟合 y = a*x + b
     x = np.array(month_nums)
