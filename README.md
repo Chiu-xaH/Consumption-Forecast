@@ -34,6 +34,7 @@
   "data" : {
     "day" : {
       "predicted_data" : 26.77,
+      "average_data" : 25.00,
       "statistical_data" : [
         {
           "date" : "2025-06-20",
@@ -43,6 +44,7 @@
     },
     "month" : {
       "predicted_data" : 800.77,
+      "average_data" : 799.00,
       "statistical_data" : [
         {
           "date" : "2025-06",

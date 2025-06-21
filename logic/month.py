@@ -57,3 +57,12 @@ def forcast_next_month_amount(washed_data):
     predicted = a * next_month + b
 
     return round(float(predicted), 2)
+
+
+def average_amount(washed_data):
+    if not washed_data:
+        return 0.0  # 避免除以0
+
+    total = sum(item["amount"] for item in washed_data)
+    avg = total / len(washed_data)
+    return round(avg, 2)

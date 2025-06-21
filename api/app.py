@@ -6,7 +6,7 @@ import os
 
 from api.result import ResultEntity, StatusCode
 from logic.day import forcast_tomorrow_amount
-from logic.month import forcast_next_month_amount
+from logic.month import forcast_next_month_amount, average_amount
 from logic.parse import parse_request
 from logic.wash import wash_data_to_day, wash_data_to_month
 
@@ -60,10 +60,12 @@ def api_all_forecast():
         return jsonify(ResultEntity.success(data={
             "month": {
                 "predicted_data" : predicted_month_data,
+                "average_data" : average_amount(washed_month_data),
                 "statistical_data" : washed_month_data
             },
             "day": {
                 "predicted_data": predicted_day_data,
+                "average_data": average_amount(washed_day_data),
                 "statistical_data": washed_day_data
             }
         }))
