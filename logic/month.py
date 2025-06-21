@@ -38,7 +38,7 @@ def forcast_next_month_amount(washed_data):
 
     for item in washed_data:
         # 解析时间
-        dt = datetime.datetime.strptime(item["month"], "%Y-%m")
+        dt = datetime.datetime.strptime(item["date"], "%Y-%m")
         months.append(dt)
         amounts.append(item["amount"])
 

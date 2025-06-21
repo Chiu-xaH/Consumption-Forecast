@@ -36,18 +36,17 @@
       "predicted_data" : 26.77,
       "statistical_data" : [
         {
-          "date" : "2025-06-20 12:00:00",
-          "amount" : "11.00",
-          "merchant" : "某某餐厅"
+          "date" : "2025-06-20",
+          "amount" : 11.00
         }
       ]
     },
     "month" : {
-      "predicted_data" : 26.77,
+      "predicted_data" : 800.77,
       "statistical_data" : [
         {
           "date" : "2025-06",
-          "amount" : "700.80"
+          "amount" : 700.80
         }
       ]
     }
