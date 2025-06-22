@@ -6,7 +6,7 @@
 /local为本地运行的，先用运行file.py将原始数据洗刷并保存为csv，在/local/day和/local/month分别预测明日、下月消费并画出折线图
 
 ## 实际应用
-[后续版本上线到此APP](https://github.com/Chiu-xaH/HFUT-Schedule)
+[v4.15.6.4(190)及其以上可用](https://github.com/Chiu-xaH/HFUT-Schedule)
 
 ## API文档
 
