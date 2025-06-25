@@ -168,4 +168,10 @@ tempCodeRunnerFile.python
 release/
 
 
-local/
+local/daily_summary.csv
+local/data.json
+local/monthly_summary.csv
+local/monthly_trend.png
+local/new.json
+local/records.csv
+local/trend.png
